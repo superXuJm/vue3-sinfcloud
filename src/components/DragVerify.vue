@@ -1,23 +1,11 @@
 <template>
-  <div class="about">
-    <div>
-      <sc-color-picker
-        style="margin-left:40px"
-        v-model:colors="background" 
-        @change="onChangeBgStyle"
-      >
-
-      </sc-color-picker>
-      <Sc-ColorPicker
-        theme="dark"
-        style="margin-left:40px"
-        v-model:colors="background" 
-        @change="onChangeBgStyle"
-      >
-
-      </Sc-ColorPicker>
-      <h2>1. Sc-DragVerify 滑块组件</h2>
+  <div class="DragVerify">
+    <h2>1. Sc-DragVerify 滑块组件</h2>
+      <a-button @click="toInit">重置</a-button>
+      <br />
+      <br />
       <Sc-DragVerify
+        ref="DragVerify1"
         :width="356" 
         :height="48"
         text="按住左边滑块，拖动到指定位置"
@@ -27,8 +15,14 @@
         successIcon="font_family layout-icon-verification"
         @passcallback="toPassCallback"
       />
+      <pre>
+        <code>
+          {{preCode1}}
+        </code>
+      </pre>
       <br/>
       <Sc-DragVerify
+        ref="DragVerify2"
         :width="356" 
         :height="48"
         text="按住左边滑块，拖动到指定位置"
@@ -42,7 +36,13 @@
         successIcon="font_family layout-icon-verification"
         @passcallback="toPassCallback"
       />
+      <pre>
+        <code>
+          {{preCode2}}
+        </code>
+      </pre>
       <a-table 
+        style="margin-top:40px;"
         :columns="columnsDragVerify" 
         :data-source="tableDataDragVerify"
         bordered
@@ -50,13 +50,12 @@
       >
 
       </a-table>
-    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'About',
+  name: 'DragVerify',
   data(){
     return{
       background: "#999",
@@ -82,15 +81,44 @@ export default {
         {key:"textSize",type:"String",default:"16px",des:"默认滑块内的文字大小"},
         {key:"@passcallback",type:"Function",default:"无",des:"API方法 滑块成功后的回调，无回调参数返回 Function()"},
         {key:"init()",type:"Function",default:"无",des:"重置滑块 登录验证失败等情况使用 this.$refs['当前滑块组件的ref名字'].init() 来调用"},
-      ]
+      ],
+      preCode1:`
+        <Sc-DragVerify
+          ref="DragVerify1"
+          :width="356" 
+          :height="48"
+          text="按住左边滑块，拖动到指定位置"
+          successText="验证成功！"
+          progressBarBg="yellow"
+          handlerIcon="font_family layout-icon-right"
+          successIcon="font_family layout-icon-verification"
+          @passcallback="toPassCallback"
+        />`,
+      preCode2:`
+        <Sc-DragVerify
+          ref="DragVerify2"
+          :width="356" 
+          :height="48"
+          text="按住左边滑块，拖动到指定位置"
+          successText="验证成功！"
+          background="rgba(0,0,0,.8)"
+          color="#fff"
+          progressBarBg="pink"
+          handlerBg="gray"
+          handlerIcon="font_family layout-icon-right"
+          circle
+          successIcon="font_family layout-icon-verification"
+          @passcallback="toPassCallback"
+        />`
     }
   },// #c41d7f
   methods:{
     toPassCallback(){
 
     },
-    onChangeBgStyle(val){
-      console.log(val)
+    toInit(val){
+      this.$refs.DragVerify1.init();
+      this.$refs.DragVerify2.init();
     }
   },
   components: {

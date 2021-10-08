@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <script>
+      window.BASE_URL = "<%= BASE_URL %>";
+      if(window.BASE_URL === "./"){
+        window.BASE_URL = window.BASE_URL.replace("index.html","");
+        window.BASE_URL = window.location.pathname +"#/";
+      }
+    </script>
   </head>
   <body>
     <noscript>

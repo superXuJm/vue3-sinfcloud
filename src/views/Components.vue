@@ -41,10 +41,10 @@
 import DragVerify from "@/components/DragVerify.vue"
 import IconFont from "@/components/IconFont.vue"
 export default {
-  name: 'Home',
+  name: 'Components',
   data(){
     return{
-      selectedKeys:["IconFont"],
+      selectedKeys:[],
       menuList:[
         
       ]
@@ -56,11 +56,18 @@ export default {
   },
   watch:{
     selectedKeys(val){
-
+      if(val && val.length){
+        this.$router.push({
+          name:"Components",
+          params:{
+            name:val[0]
+          }
+        })
+      }
     }
   },
   created(){
-    this.$router.push("/components/IconFont");
+    this.selectedKeys = [this.$route.params.name];
   },
   methods:{
     handleClick(){

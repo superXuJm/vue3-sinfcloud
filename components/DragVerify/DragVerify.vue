@@ -162,7 +162,7 @@ export default{
       this.isPassing = false;
       this.$refs.handler.style.left = '0';
       this.$refs.progressBar.style.width = '0';
-      this.$refs.message.style.color = null;
+      this.$refs.message.style.color = this.color;
 		},
 		dragStart(e){
 			if(!this.isPassing) {
