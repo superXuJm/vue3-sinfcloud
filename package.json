@@ -1,6 +1,6 @@
 {
   "name": "vue3-sinfcloud",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "SinfCloud is own Vue3 component library",
   "author": "superXuJm",
   "private": false,
@@ -39,5 +39,7 @@
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "v-viewer": "^3.0.10"
+  }
 }
