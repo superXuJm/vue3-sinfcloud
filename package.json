@@ -1,6 +1,6 @@
 {
   "name": "vue3-sinfcloud",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "SinfCloud is own Vue3 component library",
   "author": "superXuJm",
   "private": false,
@@ -22,21 +22,22 @@
     "build": "vue-cli-service build",
     "build:lib": "vue-cli-service build --target lib --name vue3-sinfcloud --dest lib src/components/index.js"
   },
-  "dependencies": {
-    
+  "peerDependencies": {
+    "v-viewer": "^3.0.10"
   },
   "devDependencies": {
-    "ant-design-vue": "^2.2.6",
-    "core-js": "^3.6.5",
-    "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0",
-    "vuex": "^4.0.0-0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
+    "ant-design-vue": "^2.2.6",
+    "core-js": "^3.6.5",
     "less": "^3.0.4",
-    "less-loader": "^5.0.0"
-  }
+    "less-loader": "^5.0.0",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0-0"
+  },
+  "dependencies": {}
 }

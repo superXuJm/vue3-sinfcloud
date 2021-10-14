@@ -1,8 +1,17 @@
 // 导入单个组件
 import DragVerify from './DragVerify/DragVerify.vue';
+
+
+// 导入第三方组件
+import 'viewerjs/dist/viewer.css';
+import VueViewer from 'v-viewer';
+
 // 以数组的结构保存组件，便于遍历
 const components = [
-  DragVerify,
+  DragVerify
+]
+const otherComponents=[
+  VueViewer,
 ]
 // 定义 install 方法
 const install = function (Vue) {
@@ -11,7 +20,10 @@ const install = function (Vue) {
     component.install = function (Vue) {
       Vue.component(component.name, component)
     }
-    Vue.use(component)
+    Vue.use(component);
+  })
+  otherComponents.map(component=>{
+    Vue.use(component);
   })
 }
 

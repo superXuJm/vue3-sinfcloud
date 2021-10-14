@@ -24,6 +24,11 @@
                 DragVerify滑块验证
               </a-menu-item>
             </a-menu-item-group>
+            <a-menu-item-group key="other" title="集成第三方组件">
+              <a-menu-item key="VueViewer">
+                vue-viewer图片预览
+              </a-menu-item>
+            </a-menu-item-group>
           </a-sub-menu>
         </a-menu>
       </a-layout-sider>
@@ -39,6 +44,7 @@
 
 <script>
 import DragVerify from "@/components/DragVerify.vue"
+import VueViewer from "@/components/VueViewer.vue"
 import IconFont from "@/components/IconFont.vue"
 export default {
   name: 'Components',
@@ -51,8 +57,9 @@ export default {
     }
   },
   components: {
+    IconFont,
     DragVerify,
-    IconFont
+    VueViewer
   },
   watch:{
     selectedKeys(val){

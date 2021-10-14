@@ -6,6 +6,7 @@ import "@/assets/css/common.less";
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
 import ScComponents from "../components";
+// import ScComponents from "vue3-sinfcloud";
 import '../components/IconFont/iconfont.css';
 const app = createApp(App);
 
