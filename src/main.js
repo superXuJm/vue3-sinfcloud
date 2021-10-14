@@ -10,5 +10,6 @@ import ScComponents from "../components";
 import '../components/IconFont/iconfont.css';
 const app = createApp(App);
 
+// app.use(ScComponents,"common")
 app.use(ScComponents).use(Antd);
 app.use(store).use(router).mount('#app')

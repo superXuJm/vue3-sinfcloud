@@ -1,7 +1,6 @@
 // 导入单个组件
 import DragVerify from './DragVerify/DragVerify.vue';
 
-
 // 导入第三方组件
 import 'viewerjs/dist/viewer.css';
 import VueViewer from 'v-viewer';
@@ -14,7 +13,7 @@ const otherComponents=[
   VueViewer,
 ]
 // 定义 install 方法
-const install = function (Vue) {
+const install = function (Vue,type) {
   // 遍历并注册全局组件
   components.map(component => {
     component.install = function (Vue) {
@@ -22,6 +21,10 @@ const install = function (Vue) {
     }
     Vue.use(component);
   })
+  // 是否加载第三方库
+  if(type && type === "common"){
+    return;
+  }
   otherComponents.map(component=>{
     Vue.use(component);
   })

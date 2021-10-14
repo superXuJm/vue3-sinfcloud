@@ -1,4 +1,3 @@
-import VViewer from '@/components/VViewer.vue';
 <template>
   <div class="v-viewer">
     <h2>
@@ -61,9 +60,6 @@ export default {
           }
         }`
     }
-  },
-  created(){
-    console.log(this);
   },
   methods:{
     toPreviewImage(){
